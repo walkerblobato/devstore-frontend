@@ -7,7 +7,8 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    // Trocar bundler para Node
+    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -17,6 +18,8 @@
         "name": "next"
       }
     ],
+    // Adicionar para usar teste Cypress
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }

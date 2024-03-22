@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next/core-web-vitals", "@rocketseat/eslint-config/next"],
+  // Tirar erro do nemaspace em support/commands.ts em cypress e2e
+  "rules": {
+    "@typescript-eslint/no-namespace": "off"
+  }
 }
