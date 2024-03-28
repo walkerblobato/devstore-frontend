@@ -1,10 +1,10 @@
-name: Cypress Tests
+name: Run E2E tests
 
 on: push
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -18,7 +18,7 @@ jobs:
         uses: cypress-io/github-action@v6
         env:
           APP_URL: "http://localhost:3000"
-          NEXT_PUBLIC_API_BASE_URL: "devstore-api-brown.vercel.app"
+          NEXT_PUBLIC_API_BASE_URL: "https://devstore-api-brown.vercel.app/"
         with:
           build: npm run build
           start: npm start
