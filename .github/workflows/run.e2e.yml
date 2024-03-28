@@ -9,9 +9,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: install Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v3
-        with: 
+        with:
           node-version: 20
 
       - name: Cypress run
@@ -23,3 +23,4 @@ jobs:
           working-directory: ./
           build: npm run build
           start: npm start
+
