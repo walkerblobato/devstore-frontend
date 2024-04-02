@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import { CartWidget } from './cart-widget'
 import { SearchForm } from './search-form'
+import { Suspense } from 'react'
 
 export const Header = () => {
   return (
@@ -12,7 +13,10 @@ export const Header = () => {
           devstore
         </Link>
 
-        <SearchForm />
+        {/* Cria uma fronteira entre o que se consegue gerar de forma estática e o que precisa gerar no momento que o usuário está acesando, todo o componente será gerado de forma estática menos o que está dentro do componente Suspense, fallback null é passado para que não mostre nada enquanto o componente SearchForm esteja sendo construído */}
+        <Suspense fallback={null}>
+          <SearchForm />
+        </Suspense>
       </div>
       <div className="flex items-center gap-4">
         <CartWidget />

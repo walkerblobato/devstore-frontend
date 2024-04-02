@@ -5,17 +5,11 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   typescript: {
-    ignoreDuringBuilds: true,
+    ignoreBuildErrors: true,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'github.com',
-        pathname: '**',
-      },
-    ],
+    domains: ['github.com'],
   },
 }
 
-export default nextConfig
+module.exports = nextConfig
